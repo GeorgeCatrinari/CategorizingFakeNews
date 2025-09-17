@@ -1,70 +1,32 @@
-## Setting up the environment
-### 1. Creating new Python evironment.
+# 📰 Categorizing Fake News (Case Study)
 
-A virtual environment is like a separate workspace for Python. It has its own Python version and its own set of installed packages. This way:
+## 📌 Descriere
+Acest proiect este un **studiu de caz în procesarea limbajului natural (NLP)** și **machine learning**, având ca scop **clasificarea articolelor de știri în funcție de veridicitate** (fake news vs. real news).  
 
-You can install the exact versions needed for the course.
+Proiectul parcurge etapele esențiale:
+- Explorarea și curățarea datelor text.
+- Preprocesarea limbajului natural (tokenizare, lematizare, eliminare stopwords).
+- Construirea și antrenarea mai multor modele de clasificare.
+- Compararea performanței între metode tradiționale (Naive Bayes, Logistic Regression, Random Forest) și modele moderne bazate pe **transformers** (ex. BERT).
+- Evaluarea modelelor prin metrici de acuratețe, precizie, recall și F1-score.
 
-You won’t break any other Python projects on your computer.
+---
 
-We’ll create and manage this environment with conda - a package and environment manager.
+## 🛠️ Tehnologii utilizate
+- **Python 3.11**
+- **scikit-learn** – modele de machine learning clasice
+- **spaCy** – procesare NLP avansată
+- **TextBlob** și **VADER Sentiment** – analiză de sentiment
+- **Gensim** – word embeddings și topic modeling
+- **PyTorch** – rețele neuronale și deep learning
+- **pandas, matplotlib, seaborn** – analiză și vizualizare de date
+- **NLTK** – instrumente de NLP de bază
 
-Open the Anaconda/Miniconda Prompt (Windows) or Terminal (macOS/Linux) and execute the commands below:
+---
 
-**conda create --name nlp_course_env python=3.11**
-
-**conda activate nlp_course_env**
-
-When activated, you’ll see (nlp_course_env) appear before the command line.
-
-### 2. Installing the relevant packages.
-
-To install the required packages into the new environment, we'll use pip - Python’s built-in package installer. Think of conda as setting up the room (environment), and pip as bringing in the furniture (the libraries).
-
-We use pip here because some packages are easiest to install from PyPI.
-
-In Anaconda Prompt or Terminal, execute:
-
-**pip install nltk==3.9.1 pandas==2.2.3 matplotlib==3.10.0 spacy==3.8.3 textblob==0.18.0.post0 vaderSentiment==3.3.2 transformers==4.47.1 scikit-learn==1.6.0 gensim==4.3.3 seaborn==0.13.2 torch==2.5.1 ipywidgets==8.1.5**
-
-**python -m spacy download en_core_web_sm**
-
-**pip install chardet ipykernel jupyterlab notebook**
-
-**python -m ipykernel install --user --name=nlp_course_env**
-
-
-
-Then, open Jupyter Notebook and remember to check the kernel is set to "nlp_course_env".
-
- 
-********************************************************************************************************
-
-
-### 3. Explaining the packages.
-
-Let's breakdown what each library is used for:
-
-**nltk (3.9.1)** – The Natural Language Toolkit, one of the oldest and most widely used NLP libraries. It includes tools for breaking text into words or sentences (tokenizers), simplifying words to their base form (stemmers, lemmatizers), and accessing large text collections and linguistic datasets. Great for learning and experimenting with NLP basics.
-
-**pandas (2.2.3)** – Provides the DataFrame structure, which makes it easy to load, clean, and organize data in rows and columns (similar to Excel, but much more powerful). You’ll use it to manipulate text datasets and combine them with other information.
-
-**matplotlib (3.10.0)** – The fundamental Python plotting library. It lets you create line charts, bar graphs, scatter plots, and more. Think of it as the "drawing canvas" for your data visualizations.
-
-**seaborn (0.13.2)** – Built on top of matplotlib, but with easier functions and beautiful default styles. It’s especially good for statistical plots, like showing correlations between variables or distributions of data.
-
-**scikit-learn (1.6.0)** – A general-purpose machine learning toolkit. It provides algorithms for classification, regression, clustering, feature extraction, and model evaluation. It’s often used for building traditional ML models before moving on to deep learning.
-
-**spaCy (3.8.3)** – A modern NLP library designed for speed and production use. It handles advanced tasks like part-of-speech tagging (identifying nouns/verbs), named entity recognition (detecting people, places, organizations), and syntactic parsing. It’s faster and more practical than NLTK for large-scale projects.
-
-**TextBlob (0.18.0.post0)** – A beginner-friendly NLP library that wraps around NLTK and other tools. It makes common tasks like sentiment analysis, phrase extraction, and translation very simple with just a few lines of code.
-
-**VADER Sentiment (3.3.2)** – A lightweight, rule-based tool for sentiment analysis, tuned for short, casual texts like tweets, reviews, and comments. It understands things like exclamation marks, capitalization, and even emoji sentiment.
-
-**gensim (4.3.3)** – A library for topic modeling and working with word embeddings. It’s known for algorithms like Word2Vec (which learns word meanings from context) and LDA (Latent Dirichlet Allocation) for discovering hidden topics in large text collections.
-
-**transformers (4.47.1)** – From Hugging Face, this is the go-to library for using state-of-the-art NLP models like BERT, GPT, and other large language models. It makes it easy to load pretrained models for tasks like classification, text generation, and translation.
-
-**PyTorch (torch 2.5.1)** – A deep learning framework that powers libraries like transformers. It’s used to build and train custom neural networks for NLP and beyond. Many cutting-edge AI models are implemented in PyTorch.
-
-**ipywidgets (8.1.5)** – Provides interactive controls (like sliders, dropdowns, and buttons) inside Jupyter notebooks. These let you build small UIs that make experiments more visual and hands-on.
+## 📊 Rezultate
+- Analiză exploratorie detaliată a dataset-ului.
+- Construirea unui pipeline NLP pentru curățarea și vectorizarea textului.
+- Modele testate: **Naive Bayes, Logistic Regression, Random Forest, BERT**.
+- Obținerea unor scoruri competitive de clasificare pe setul de test.
+- Vizualizări comparative ale performanțelor.
